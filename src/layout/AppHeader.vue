@@ -2,14 +2,14 @@
   <header class="header-global">
     <base-nav class="navbar-main" transparent type="" effect="light" expand>
       <router-link slot="brand" class="navbar-brand mr-lg-5" to="/">
-        <img src="img/brand/white.png" alt="logo" />
+        <img src="images_happy/houselogo.png" alt="logo" />
       </router-link>
       <div class="row" slot="content-header" slot-scope="{ closeMenu }">
         <div class="col-6 collapse-brand">
           <a
             href="https://demos.creative-tim.com/vue-argon-design-system/documentation/"
           >
-            <img src="../images_happy/logo.png" />
+            <img src="../images_happy/logo.jpg" />
           </a>
         </div>
         <div class="col-6 collapse-close">
@@ -98,7 +98,7 @@
 import BaseNav from "@/components/BaseNav";
 import BaseDropdown from "@/components/BaseDropdown";
 import CloseButton from "@/components/CloseButton";
-import { mapState} from "vuex";
+import { mapState } from "vuex";
 
 export default {
   data() {
@@ -113,7 +113,7 @@ export default {
     BaseDropdown,
   },
   methods: {
-   logout() {
+    logout() {
       this.$store.dispatch("logout");
       this.$router.push("../");
     },
