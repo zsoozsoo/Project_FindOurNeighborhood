@@ -9,7 +9,7 @@
   </tr> -->
   <div class="col-lg-4">
     <card class="border-0" hover shadow body-classes="py-5">
-      <icon name="ni ni-check-bold" type="primary" rounded class="mb-4">
+      <icon name="ni ni-check-bold" type="dark" rounded class="mb-4">
         {{ no }}</icon
       >
       <h6 class="text-primary text-uppercase">

@@ -61,14 +61,14 @@
       <base-button
         v-if="type == 'create'"
         class="btn mr-1"
-        type="info"
+        type="secondary"
         @click="checkValue"
         >등록</base-button
       >
-      <base-button v-else class="btn mr-1" type="info" @click="checkValue"
+      <base-button v-else class="btn mr-1" type="secondary" @click="checkValue"
         >수정</base-button
       >
-      <base-button class="btn mr-1" type="info" @click="moveList"
+      <base-button class="btn mr-1" type="secondary" @click="moveList"
         >목록</base-button
       >
     </div>
