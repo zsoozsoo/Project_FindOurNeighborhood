@@ -4,7 +4,6 @@
       <section class="wrap-banner">
         <div id="mainPage" data-stellar-background-ratio="0.5">
           <div class="main-title">
-            <!-- <Roller text="Happy House"></Roller> -->
             <vue-hacker-text
               class="hacker-text"
               text="Let's find our neighborhood!"
@@ -49,14 +48,36 @@
 
     <div class="item second">
       <section>
-        <div class="wrap-banner">
-          <div id="mainPage" data-stellar-background-ratio="0.5">
-            <div class="main-title">
-              <vue-typer text="사 용 한 언 어" class="lan"></vue-typer>
-            </div>
-          </div>
+        <div class="row introTitle">
+          <!-- <div id="mainPage" data-stellar-background-ratio="0.5"> -->
+          <div class="col-2"></div>
+          <vue-hacker-text
+            class="hacker-text2 col-9"
+            text="C O N T R I B U T O R S"
+            speed="fast"
+          />
+          <div class="col-1"></div>
+          <!-- </div> -->
         </div>
         <div class="row">
+          <hr />
+          <div class="col-6 intro">
+            <br />
+            <h2 style="font-weight: 100px">LEE JISOO</h2>
+
+            <img src="images_happy/jisoo.png" />
+            <h3>기획 / 개발 / 구현</h3>
+          </div>
+          <div class="col-6 intro">
+            <br />
+            <h2>JANG SARAH</h2>
+            <img src="images_happy/sarah.png" />
+            <h3>기획 / 개발 / 구현</h3>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- <div class="row">
           <div class="col">
             <span>
               <p class="subtitle">Backend</p>
@@ -86,32 +107,7 @@
               </carousel-3d>
             </span>
           </div>
-        </div>
-      </section>
-    </div>
-
-    <div class="item">
-      <section class="wrap-banner">
-        <div id="mainPage" data-stellar-background-ratio="0.5">
-          <div class="main-title">
-            <vue-hacker-text class="hacker-text" text="Find our home" />
-            <h2 hidden="true">Find our home</h2>
-            <p class="subtitle">우 리 집 찾 기 프 로 젝 트</p>
-            <br />
-            <router-link to="/search"
-              ><base-button
-                class="findBtn"
-                outline
-                type="secondary"
-                icon="fa fa-search"
-                size="lg"
-                >매물 찾기</base-button
-              ></router-link
-            >
-          </div>
-        </div>
-      </section>
-    </div>
+        </div> -->
   </vue-scroll-snap>
 </template>
 
@@ -119,7 +115,7 @@
 import BaseButton from "../../components/BaseButton.vue";
 import VueHackerText from "vue-hacker-text";
 import VueScrollSnap from "vue-scroll-snap";
-import { Carousel3d, Slide } from "vue-carousel-3d";
+// import { Carousel3d, Slide } from "vue-carousel-3d";
 // import Roller from "vue-roller";
 
 export default {
@@ -127,8 +123,8 @@ export default {
     BaseButton,
     VueHackerText,
     VueScrollSnap,
-    Carousel3d,
-    Slide,
+    // Carousel3d,
+    // Slide,
     // Roller,
   },
   name: "",
@@ -152,6 +148,12 @@ export default {
   font-size: 10em;
   color: rgb(0, 0, 0);
 }
+.hacker-text2 {
+  font-weight: 600;
+  font-size: 6em;
+  color: rgb(0, 0, 0);
+  margin: 0;
+}
 *,
 :after,
 :before {
@@ -166,7 +168,7 @@ body {
   background: #34393f;
 }
 #mainPage {
-  height: 100%;
+  height: 130%;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -348,13 +350,6 @@ h3 {
   background-size: contain;
 }
 
-.second {
-  background: darkslateblue;
-  p {
-    text-align: center;
-  }
-}
-
 #slide {
   background: transparent;
 
@@ -366,5 +361,17 @@ h3 {
 .vue-typer {
   font-size: 3rem;
   font: white;
+}
+
+.intro {
+  border: 1px solid black;
+  border-radius: 300px;
+  height: 100%;
+  text-align: center;
+  // background: rgb(227, 128, 35);
+}
+
+.introTitle {
+  margin-top: 300px;
 }
 </style>

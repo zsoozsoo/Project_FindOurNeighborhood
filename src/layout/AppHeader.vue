@@ -2,14 +2,14 @@
   <header class="header-global">
     <base-nav class="navbar-main" transparent type="" effect="light" expand>
       <router-link slot="brand" class="navbar-brand mr-lg-5" to="/">
-        <img src="images_happy/houselogo.png" alt="logo" />
+        <img src="/images_happy/logo.jpeg" alt="logo" width="100px" height />
       </router-link>
       <div class="row" slot="content-header" slot-scope="{ closeMenu }">
         <div class="col-6 collapse-brand">
           <a
             href="https://demos.creative-tim.com/vue-argon-design-system/documentation/"
           >
-            <img src="../images_happy/logo.jpg" />
+            <img src="/images_happy/logo.jpeg" />
           </a>
         </div>
         <div class="col-6 collapse-close">
@@ -120,4 +120,9 @@ export default {
   },
 };
 </script>
-<style></style>
+<style>
+@import url("https://fonts.googleapis.com/css?family=Proza+Libre");
+.logoText {
+  /* font-family: "Sigmar One", cursive; */
+}
+</style>
