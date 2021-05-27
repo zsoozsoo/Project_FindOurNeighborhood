@@ -1,16 +1,13 @@
 <template>
   <vue-scroll-snap :fullscreen="true">
-    <div class="item first">
+    <div class="item">
       <section class="wrap-banner">
         <div id="mainPage" data-stellar-background-ratio="0.5">
           <div class="main-title">
-            <vue-hacker-text
-              class="hacker-text"
-              text="Let's find our neighborhood!"
-              speed="fast"
-            />
-            <!-- <h2 hidden="true"></h2> -->
-            <p class="subtitle">아파트 정보부터 우리 동네 정보까지</p>
+            <Roller text="Happy House"/>
+            <!-- <vue-hacker-text class="hacker-text" text="Find our home" /> -->
+            <h2 hidden="true">Find our home</h2>
+            <p class="subtitle">우 리 집 찾 기 프 로 젝 트</p>
             <br />
             <router-link to="/search"
               ><base-button
@@ -43,71 +40,10 @@
           >
           </vue-particles>
         </div>
+
       </section>
     </div>
 
-    <div class="item second">
-      <section>
-        <div class="row introTitle">
-          <!-- <div id="mainPage" data-stellar-background-ratio="0.5"> -->
-          <div class="col-2"></div>
-          <vue-hacker-text
-            class="hacker-text2 col-9"
-            text="C O N T R I B U T O R S"
-            speed="fast"
-          />
-          <div class="col-1"></div>
-          <!-- </div> -->
-        </div>
-        <div class="row">
-          <hr />
-          <div class="col-6 intro">
-            <br />
-            <h2 style="font-weight: 100px">LEE JISOO</h2>
-
-            <img src="images_happy/jisoo.png" />
-            <h3>기획 / 개발 / 구현</h3>
-          </div>
-          <div class="col-6 intro">
-            <br />
-            <h2>JANG SARAH</h2>
-            <img src="images_happy/sarah.png" />
-            <h3>기획 / 개발 / 구현</h3>
-          </div>
-        </div>
-      </section>
-    </div>
-    <!-- <div class="row">
-          <div class="col">
-            <span>
-              <p class="subtitle">Backend</p>
-              <carousel-3d>
-                <slide :index="0" id="slide"
-                  ><img src="../../images_happy/springicon.png"
-                /></slide>
-                <slide :index="1" id="slide"
-                  ><img src="../../images_happy/javaicon.png"
-                /></slide>
-              </carousel-3d>
-            </span>
-          </div>
-          <div class="col">
-            <span>
-              <p class="subtitle">Frontend</p>
-              <carousel-3d>
-                <slide :index="0" id="slide"
-                  ><img src="../../images_happy/vueicon.png"
-                /></slide>
-                <slide :index="1" id="slide"
-                  ><img src="../../images_happy/cssicon.png"
-                /></slide>
-                <slide :index="2" id="slide"
-                  ><img src="../../images_happy/htmlicon.png"
-                /></slide>
-              </carousel-3d>
-            </span>
-          </div>
-        </div> -->
   </vue-scroll-snap>
 </template>
 
@@ -115,18 +51,10 @@
 import BaseButton from "../../components/BaseButton.vue";
 import VueHackerText from "vue-hacker-text";
 import VueScrollSnap from "vue-scroll-snap";
-// import { Carousel3d, Slide } from "vue-carousel-3d";
-// import Roller from "vue-roller";
+import Roller from "vue-roller";
 
 export default {
-  components: {
-    BaseButton,
-    VueHackerText,
-    VueScrollSnap,
-    // Carousel3d,
-    // Slide,
-    // Roller,
-  },
+  components: { BaseButton, VueHackerText, VueScrollSnap, Roller },
   name: "",
   data() {
     return {
@@ -148,12 +76,6 @@ export default {
   font-size: 10em;
   color: rgb(0, 0, 0);
 }
-.hacker-text2 {
-  font-weight: 600;
-  font-size: 6em;
-  color: rgb(0, 0, 0);
-  margin: 0;
-}
 *,
 :after,
 :before {
@@ -168,7 +90,7 @@ body {
   background: #34393f;
 }
 #mainPage {
-  height: 130%;
+  height: 100%;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -286,11 +208,6 @@ h3 {
       font-size: 1rem;
     }
   }
-
-  p.about {
-    font-size: 8rem;
-    color: white;
-  }
 }
 .findBtn {
   z-index: 999;
@@ -348,30 +265,5 @@ h3 {
   margin-right: 4px;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iNDBweCIgaGVpZ2h0PSI0MHB4IiB2aWV3Qm94PSIxMiAxMiA0MCA0MCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAxMiAxMiA0MCA0MCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBmaWxsPSIjMzMzMzMzIiBkPSJNMzIsMTMuNGMtMTAuNSwwLTE5LDguNS0xOSwxOWMwLDguNCw1LjUsMTUuNSwxMywxOGMxLDAuMiwxLjMtMC40LDEuMy0wLjljMC0wLjUsMC0xLjcsMC0zLjINCgljLTUuMywxLjEtNi40LTIuNi02LjQtMi42QzIwLDQxLjYsMTguOCw0MSwxOC44LDQxYy0xLjctMS4yLDAuMS0xLjEsMC4xLTEuMWMxLjksMC4xLDIuOSwyLDIuOSwyYzEuNywyLjksNC41LDIuMSw1LjUsMS42DQoJYzAuMi0xLjIsMC43LTIuMSwxLjItMi42Yy00LjItMC41LTguNy0yLjEtOC43LTkuNGMwLTIuMSwwLjctMy43LDItNS4xYy0wLjItMC41LTAuOC0yLjQsMC4yLTVjMCwwLDEuNi0wLjUsNS4yLDINCgljMS41LTAuNCwzLjEtMC43LDQuOC0wLjdjMS42LDAsMy4zLDAuMiw0LjcsMC43YzMuNi0yLjQsNS4yLTIsNS4yLTJjMSwyLjYsMC40LDQuNiwwLjIsNWMxLjIsMS4zLDIsMywyLDUuMWMwLDcuMy00LjUsOC45LTguNyw5LjQNCgljMC43LDAuNiwxLjMsMS43LDEuMywzLjVjMCwyLjYsMCw0LjYsMCw1LjJjMCwwLjUsMC40LDEuMSwxLjMsMC45YzcuNS0yLjYsMTMtOS43LDEzLTE4LjFDNTEsMjEuOSw0Mi41LDEzLjQsMzIsMTMuNHoiLz4NCjwvc3ZnPg0K);
   background-size: contain;
-}
-
-#slide {
-  background: transparent;
-
-  img {
-    height: 100%;
-  }
-}
-
-.vue-typer {
-  font-size: 3rem;
-  font: white;
-}
-
-.intro {
-  border: 1px solid black;
-  border-radius: 300px;
-  height: 100%;
-  text-align: center;
-  // background: rgb(227, 128, 35);
-}
-
-.introTitle {
-  margin-top: 300px;
 }
 </style>
