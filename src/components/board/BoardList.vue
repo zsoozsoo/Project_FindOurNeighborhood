@@ -2,7 +2,7 @@
   <div>
     <div class="position-relative">
       <!-- shape Hero -->
-      <section class="section-shaped my-0">
+      <section class="section-shaped my-0 back">
         <div class="shape shape-style-1 shape-default shape-skew">
           <span></span>
           <span></span>
@@ -18,14 +18,15 @@
           <div class="col px-0">
             <div class="row">
               <div class="col-lg-6">
-                <h1 class="display-3 text-white">공지사항</h1>
-                <p class="lead text-white">
+                <h1 class="display-3 text-secondary">공지사항</h1>
+                <p class="lead text-secondary">
                   이곳에서 공지사항을 확인해주세요!!
                 </p>
                 <div class="btn-wrapper">
                   <base-button
                     tag="a"
-                    type="info"
+                    type="secondary"
+                    class="text-white"
                     variant="primary"
                     @click="movePage"
                   >
@@ -79,7 +80,7 @@
        <!-- </marquee-text> -->
     </div>
  
-    <div v-else class="fontToWhite">
+    <div v-else class="text-secondary">
       <section class="section section-lg pt-lg-0 mt--200">
         <div class="container">게시글이 없습니다.</div>
       </section>
@@ -88,7 +89,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapState } from "vuex";
 import ListRow from "@/components/board/include/ListRow.vue";
 //import moment from "moment";
 // import MarqueeText from 'vue-marqee-text-component';
@@ -108,13 +109,15 @@ export default {
 
   computed: {
     ...mapGetters(["boards"]),
+    ...mapState(["isLogin", "userInfo"]),
   },
   created() {
     this.$store.dispatch("getBoards");
   },
   methods: {
     movePage() {
-      this.$router.push({ name: "board-create" });
+      if (this.isLogin && this.userInfo.id === "admin") this.$router.push({ name: "board-create" });
+      else alert("관리자만 사용 가능한 기능입니다.");
     },
     // getFormatDate(regtime) {
     //   return moment(new Date(regtime)).format("YYYY.MM.DD");

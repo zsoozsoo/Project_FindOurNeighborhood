@@ -31,9 +31,9 @@
     <br />
     <br />
     <div class="text-center">
-      <router-link to="/board" class="btn" type="info">목록</router-link>
-      <router-link :to="`/board/modify/${board.no}`" class="btn" type="info">수정</router-link>
-      <a href="#" class="btn" type="info" @click="deleteBoard">삭제</a>
+      <router-link to="/board" class="btn" type="secondary">목록</router-link>
+      <router-link :to="`/board/modify/${board.no}`" class="btn" type="secondary">수정</router-link>
+      <a href="#" class="btn" type="secondary" @click="deleteBoard">삭제</a>
     </div>
   </div>
 </template>
